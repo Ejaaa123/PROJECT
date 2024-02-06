@@ -1,0 +1,126 @@
+
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500&family=Poppins:wght@500;600&display=swap');
+
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Poppins, sans-serif;
+    cursor: pointer;
+}
+
+body {
+    background-color: #f7f7f7;
+}
+
+.sidebar {
+    top: 0;
+    left: 0;
+    width: 80px;
+    height: 100vh;
+    position: absolute;
+    padding: 10px;
+    background-color: #185c83;
+    transition: all 0.3s ease;
+    border-radius: 0.5rem;
+    font-weight: 25px;
+}
+
+.sidebar.active{
+    width: 250px;
+}
+
+.sidebar.active ~ .main {
+    left: 250px;
+    width: calc(100% - 250px);
+}
+
+#button {
+    color: white;
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 30px;
+}
+
+.sidebar.active #button {
+    left: 90%;
+}
+
+.sidebar ul li {
+    list-style-type: none;
+    height: 90px;
+    width: 90%;
+    margin: 5px;
+    position: relative;
+    line-height: 50px;
+    transform: translateY(120%);
+} 
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: white;
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    font-size: 25px;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.sidebar ul li a:hover {
+    background-color: white;
+    color: #183358;
+}
+
+.sidebar ul li i {
+    text-align: center;
+    margin-right: 15px;
+    min-width: 50px;
+    text-align: center;
+    border-radius: 1rem;
+    line-height: 50px;
+    height: 50px;
+}
+
+.sidebar .items {
+    opacity: 0;
+}
+
+.sidebar.active .items {
+    opacity: 1;
+}
+
+.sidebar ul li .tooltip {
+    position: absolute;
+    left: 120px;
+    top: 25%;
+    transform: translate(-50%, -50%);
+    line-height: 20px;
+    border-radius: 5px;
+    padding: 10px;
+    width: 80px;
+    text-align: center;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.349);
+    opacity: 0;
+    transition: all 0.3s ease;
+    border: solid 1px black;
+}
+
+
+.sidebar ul li:hover .tooltip {
+    opacity: 1;
+}
+
+.sidebar.active ul li .tooltip {
+    display: none;
+}
+
+.main {
+    position: relative;
+    left: 80px;
+    width: calc(100% - 80px);
+    transition: all 0.3s ease;
+}
